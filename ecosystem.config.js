@@ -4,7 +4,6 @@ module.exports = {
       name: "config-server",
       script: "java",
       args: [
-        "-Dspring.config.import=optional:configserver:http://localhost:8888",
         "-jar",
         "config-server/target/config-server-1.0.0-SNAPSHOT.jar"
       ],
@@ -144,3 +143,5 @@ module.exports = {
     }
   ]
 };
+
+
