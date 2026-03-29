@@ -3,7 +3,11 @@ module.exports = {
     {
       name: "config-server",
       script: "java",
-      args: "-jar config-server/target/config-server-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-jar",
+        "config-server/target/config-server-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
@@ -14,7 +18,12 @@ module.exports = {
     {
       name: "eureka-server",
       script: "java",
-      args: "-jar eureka-server/target/eureka-server-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
+        "-jar",
+        "eureka-server/target/eureka-server-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
@@ -25,7 +34,12 @@ module.exports = {
     {
       name: "api-gateway",
       script: "java",
-      args: "-jar api-gateway/target/api-gateway-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
+        "-jar",
+        "api-gateway/target/api-gateway-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
@@ -36,7 +50,17 @@ module.exports = {
     {
       name: "device-service",
       script: "java",
-      args: "-jar device-service/target/device-service-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.datasource.url=jdbc:mysql://127.0.0.1:3306/agrisense_device_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+        "-Dspring.datasource.username=agrisense_app",
+        "-Dspring.datasource.password=AgriSense@2026",
+        "-Dspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver",
+        "-Dspring.jpa.hibernate.ddl-auto=update",
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
+        "-jar",
+        "device-service/target/device-service-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
@@ -47,7 +71,14 @@ module.exports = {
     {
       name: "sensor-data-service",
       script: "java",
-      args: "-jar sensor-data-service/target/sensor-data-service-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.data.mongodb.uri=mongodb://localhost:27017/agrisense_sensor_db",
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
+        "-Dalert.integration.base-url=http://localhost:8083",
+        "-jar",
+        "sensor-data-service/target/sensor-data-service-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
@@ -58,7 +89,17 @@ module.exports = {
     {
       name: "alert-service",
       script: "java",
-      args: "-jar alert-service/target/alert-service-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.datasource.url=jdbc:mysql://127.0.0.1:3306/agrisense_alert_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+        "-Dspring.datasource.username=agrisense_app",
+        "-Dspring.datasource.password=AgriSense@2026",
+        "-Dspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver",
+        "-Dspring.jpa.hibernate.ddl-auto=update",
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
+        "-jar",
+        "alert-service/target/alert-service-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
@@ -69,7 +110,20 @@ module.exports = {
     {
       name: "media-service",
       script: "java",
-      args: "-jar media-service/target/media-service-1.0.0-SNAPSHOT.jar",
+      args: [
+        "-Dspring.datasource.url=jdbc:mysql://127.0.0.1:3306/agrisense_media_db?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC",
+        "-Dspring.datasource.username=agrisense_app",
+        "-Dspring.datasource.password=AgriSense@2026",
+        "-Dspring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver",
+        "-Dspring.jpa.hibernate.ddl-auto=update",
+        "-Dspring.config.import=optional:configserver:http://localhost:8888",
+        "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
+        "-Dmedia.storage.mode=gcs",
+        "-Dmedia.storage.bucket=agrisense-media-warushika-2026",
+        "-Dmedia.storage.project-id=project-8b7500b1-855a-4cd2-8bf",
+        "-jar",
+        "media-service/target/media-service-1.0.0-SNAPSHOT.jar"
+      ],
       cwd: ".",
       autorestart: true,
       watch: false,
