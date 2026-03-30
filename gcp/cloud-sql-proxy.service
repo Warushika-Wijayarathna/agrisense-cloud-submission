@@ -1,0 +1,15 @@
+[Unit]
+Description=Cloud SQL Auth Proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+EnvironmentFile=/etc/agrisense/agrisense.env
+ExecStart=/bin/sh -c '${CLOUD_SQL_PROXY_BIN} --port 3306 ${CLOUD_SQL_CONNECTION_NAME}'
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target

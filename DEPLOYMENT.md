@@ -93,7 +93,41 @@ These are the required resources from the guideline and how this project should 
 - `Cloud Storage`: use for media files in the final deployment version
 - `Firestore`: the guideline lists this under visible GCP resources, so be prepared to show it in the console if your lecturer expects it
 
-## 6. High availability expectations
+## 6. Managed VM bootstrap
+
+For instance templates and managed instance groups, use the files in [`gcp/`](/C:/AgriSense%20Cloud/AgriSense%20Cloud/polyrepo-staging/agrisense-cloud-submission/gcp):
+
+- `gcp/vm-startup.sh`: startup script for VM metadata
+- `gcp/cloud-sql-proxy.service`: systemd unit for Cloud SQL Proxy
+- `gcp/agrisense.env.example`: environment file template copied to `/etc/agrisense/agrisense.env`
+
+Suggested workflow:
+
+1. Prepare one working VM and copy the environment file:
+   ```bash
+   sudo mkdir -p /etc/agrisense
+   sudo cp gcp/agrisense.env.example /etc/agrisense/agrisense.env
+   ```
+2. Run the startup script once manually:
+   ```bash
+   sudo bash gcp/vm-startup.sh
+   ```
+3. Capture a disk image or build an instance template from that VM.
+4. Use the same startup script in the instance template metadata so replacement VMs self-heal.
+
+## 7. Health check suggestions
+
+Use these endpoints for load balancer / MIG health checks:
+
+- `config-server`: `http://<instance>:8888/actuator/health`
+- `eureka-server`: `http://<instance>:8761/actuator/health`
+- `api-gateway`: `http://<instance>:8080/actuator/health`
+- `device-service`: `http://<instance>:8081/actuator/health`
+- `sensor-data-service`: `http://<instance>:8082/actuator/health`
+- `alert-service`: `http://<instance>:8083/actuator/health`
+- `media-service`: `http://<instance>:8084/actuator/health`
+
+## 8. High availability expectations
 
 The guideline says single-instance platform deployments lose marks. For the final deployment, aim for:
 
@@ -102,7 +136,7 @@ The guideline says single-instance platform deployments lose marks. For the fina
 - multiple instances of `api-gateway`
 - backend services deployed on scalable instance groups
 
-## 7. Eureka dashboard
+## 9. Eureka dashboard
 
 You must expose the Eureka dashboard publicly and put the URL in the main `README.md`.
 
@@ -114,7 +148,7 @@ http://localhost:8761
 
 For submission, replace that with the public deployed URL.
 
-## 8. Final manual tasks before submission
+## 10. Final manual tasks before submission
 
 - configure `media-service` to use Google Cloud Storage by setting `MEDIA_STORAGE_BUCKET`, `GCP_PROJECT_ID`, and `GOOGLE_APPLICATION_CREDENTIALS` on the deployment target
 - build and test all services on a machine with Java, Maven, Node, npm, MySQL, and MongoDB installed
