@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# PM2/systemd can run without HOME set; default to root so bootstrap cleanup
+# and pm2 save/startup steps don't abort at the very end.
+export HOME="${HOME:-/root}"
+
 export DEBIAN_FRONTEND=noninteractive
 
 PROJECT_ROOT="${PROJECT_ROOT:-/opt/agrisense-cloud-submission}"
