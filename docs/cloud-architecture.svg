@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="520" viewBox="0 0 1200 520">
+  <rect width="1200" height="520" fill="#f6f4ef"/>
+  <rect x="35" y="35" width="1130" height="450" rx="24" fill="#eef4ee" stroke="#56785c" stroke-width="3"/>
+  <text x="80" y="75" font-family="Segoe UI, Arial" font-size="30" fill="#21362a">AgriSense Cloud Architecture</text>
+
+  <rect x="80" y="120" width="180" height="90" rx="16" fill="#dfe8fb" stroke="#4b6aa6" stroke-width="3"/>
+  <text x="170" y="160" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#1e2c52">Users</text>
+  <text x="170" y="188" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#1e2c52">Dashboard / Arduino</text>
+
+  <rect x="330" y="120" width="210" height="90" rx="16" fill="#f9dfd2" stroke="#b15f38" stroke-width="3"/>
+  <text x="435" y="160" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#4f2612">Load Balancer</text>
+  <text x="435" y="188" font-family="Consolas, monospace" font-size="16" text-anchor="middle" fill="#4f2612">34.1.140.55</text>
+
+  <rect x="620" y="120" width="220" height="90" rx="16" fill="#d9ecf7" stroke="#1d6d8f" stroke-width="3"/>
+  <text x="730" y="160" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#18303a">Managed Instance Group</text>
+  <text x="730" y="188" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#18303a">API Gateway + services</text>
+
+  <rect x="910" y="120" width="180" height="90" rx="16" fill="#ece5fb" stroke="#6e58a8" stroke-width="3"/>
+  <text x="1000" y="160" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#332555">Eureka</text>
+  <text x="1000" y="188" font-family="Consolas, monospace" font-size="16" text-anchor="middle" fill="#332555">34.124.221.108:8761</text>
+
+  <rect x="120" y="300" width="180" height="90" rx="16" fill="#fff0c9" stroke="#b7901f" stroke-width="3"/>
+  <text x="210" y="338" font-family="Segoe UI, Arial" font-size="24" text-anchor="middle" fill="#5a4710">Cloud SQL</text>
+  <text x="210" y="366" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#5a4710">MySQL</text>
+
+  <rect x="360" y="300" width="180" height="90" rx="16" fill="#e7f6df" stroke="#4b8c40" stroke-width="3"/>
+  <text x="450" y="338" font-family="Segoe UI, Arial" font-size="24" text-anchor="middle" fill="#23411d">MongoDB</text>
+  <text x="450" y="366" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#23411d">Sensor data</text>
+
+  <rect x="600" y="300" width="180" height="90" rx="16" fill="#fde2eb" stroke="#b45274" stroke-width="3"/>
+  <text x="690" y="338" font-family="Segoe UI, Arial" font-size="24" text-anchor="middle" fill="#521b31">Firestore</text>
+  <text x="690" y="366" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#521b31">Cloud integration</text>
+
+  <rect x="840" y="300" width="220" height="90" rx="16" fill="#e0f3ef" stroke="#2f8273" stroke-width="3"/>
+  <text x="950" y="338" font-family="Segoe UI, Arial" font-size="24" text-anchor="middle" fill="#18473f">Cloud Storage</text>
+  <text x="950" y="366" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#18473f">Media bucket</text>
+
+  <line x1="260" y1="165" x2="330" y2="165" stroke="#4b6aa6" stroke-width="5"/>
+  <polygon points="330,165 316,157 316,173" fill="#4b6aa6"/>
+  <line x1="540" y1="165" x2="620" y2="165" stroke="#b15f38" stroke-width="5"/>
+  <polygon points="620,165 606,157 606,173" fill="#b15f38"/>
+  <line x1="840" y1="165" x2="910" y2="165" stroke="#1d6d8f" stroke-width="5"/>
+  <polygon points="910,165 896,157 896,173" fill="#1d6d8f"/>
+
+  <line x1="730" y1="210" x2="730" y2="260" stroke="#1d6d8f" stroke-width="4"/>
+  <line x1="210" y1="300" x2="210" y2="260" stroke="#b7901f" stroke-width="4"/>
+  <line x1="450" y1="300" x2="450" y2="260" stroke="#4b8c40" stroke-width="4"/>
+  <line x1="690" y1="300" x2="690" y2="260" stroke="#b45274" stroke-width="4"/>
+  <line x1="950" y1="300" x2="950" y2="260" stroke="#2f8273" stroke-width="4"/>
+  <line x1="210" y1="260" x2="950" y2="260" stroke="#6b776d" stroke-width="3" stroke-dasharray="8 8"/>
+</svg>

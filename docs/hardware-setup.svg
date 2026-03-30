@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="360" viewBox="0 0 1100 360">
+  <rect width="1100" height="360" fill="#f5f1e7"/>
+  <rect x="40" y="80" width="220" height="170" rx="18" fill="#dbe7d3" stroke="#376f4d" stroke-width="3"/>
+  <text x="150" y="120" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#1f2f26">Arduino</text>
+  <text x="150" y="155" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle" fill="#1f2f26">DHT22 + Soil Sensor</text>
+  <text x="150" y="185" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#1f2f26">Serial output:</text>
+  <text x="150" y="210" font-family="Consolas, monospace" font-size="16" text-anchor="middle" fill="#1f2f26">temp,humidity,soilRaw</text>
+
+  <rect x="340" y="80" width="220" height="170" rx="18" fill="#d9ecf7" stroke="#1d6d8f" stroke-width="3"/>
+  <text x="450" y="120" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#18303a">ESP32</text>
+  <text x="450" y="155" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle" fill="#18303a">Reads serial</text>
+  <text x="450" y="180" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle" fill="#18303a">Maps soil %</text>
+  <text x="450" y="205" font-family="Segoe UI, Arial" font-size="18" text-anchor="middle" fill="#18303a">Posts JSON over Wi-Fi</text>
+
+  <rect x="640" y="80" width="220" height="170" rx="18" fill="#f9dfd2" stroke="#b15f38" stroke-width="3"/>
+  <text x="750" y="120" font-family="Segoe UI, Arial" font-size="28" text-anchor="middle" fill="#4f2612">Load Balancer</text>
+  <text x="750" y="155" font-family="Consolas, monospace" font-size="16" text-anchor="middle" fill="#4f2612">34.1.140.55</text>
+  <text x="750" y="185" font-family="Consolas, monospace" font-size="16" text-anchor="middle" fill="#4f2612">/api/sensor-data</text>
+
+  <rect x="940" y="80" width="120" height="170" rx="18" fill="#ece5fb" stroke="#6e58a8" stroke-width="3"/>
+  <text x="1000" y="120" font-family="Segoe UI, Arial" font-size="24" text-anchor="middle" fill="#332555">Sensor</text>
+  <text x="1000" y="150" font-family="Segoe UI, Arial" font-size="24" text-anchor="middle" fill="#332555">Data</text>
+  <text x="1000" y="180" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#332555">MongoDB</text>
+  <text x="1000" y="205" font-family="Segoe UI, Arial" font-size="16" text-anchor="middle" fill="#332555">service</text>
+
+  <line x1="260" y1="165" x2="340" y2="165" stroke="#376f4d" stroke-width="5"/>
+  <polygon points="340,165 326,157 326,173" fill="#376f4d"/>
+
+  <line x1="560" y1="165" x2="640" y2="165" stroke="#1d6d8f" stroke-width="5"/>
+  <polygon points="640,165 626,157 626,173" fill="#1d6d8f"/>
+
+  <line x1="860" y1="165" x2="940" y2="165" stroke="#b15f38" stroke-width="5"/>
+  <polygon points="940,165 926,157 926,173" fill="#b15f38"/>
+
+  <text x="300" y="150" font-family="Segoe UI, Arial" font-size="15" text-anchor="middle" fill="#376f4d">UART</text>
+  <text x="600" y="150" font-family="Segoe UI, Arial" font-size="15" text-anchor="middle" fill="#1d6d8f">HTTP POST</text>
+  <text x="900" y="150" font-family="Segoe UI, Arial" font-size="15" text-anchor="middle" fill="#b15f38">Gateway route</text>
+</svg>
