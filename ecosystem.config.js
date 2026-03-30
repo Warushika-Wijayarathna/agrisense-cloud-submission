@@ -119,6 +119,7 @@ module.exports = {
         "-Deureka.client.service-url.defaultZone=http://localhost:8761/eureka",
         "-Dmedia.storage.mode=gcs",
         "-Dmedia.storage.bucket=agrisense-media-warushika-2026",
+        "-Dmedia.storage.public-base-url=https://storage.googleapis.com/agrisense-media-warushika-2026",
         "-Dmedia.storage.project-id=project-8b7500b1-855a-4cd2-8bf",
         "-jar",
         "media-service/target/media-service-1.0.0-SNAPSHOT.jar"
