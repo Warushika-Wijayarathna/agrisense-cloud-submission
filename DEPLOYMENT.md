@@ -145,16 +145,3 @@ Expected local URL:
 ```text
 http://localhost:8761
 ```
-
-For submission, replace that with the public deployed URL.
-
-## 10. Final manual tasks before submission
-
-- configure `media-service` to use Google Cloud Storage by setting `MEDIA_STORAGE_BUCKET`, `GCP_PROJECT_ID`, and `GOOGLE_APPLICATION_CREDENTIALS` on the deployment target
-- build and test all services on a machine with Java, Maven, Node, npm, MySQL, and MongoDB installed
-- create separate GitHub repositories for each service and the frontend
-- create one final main repository containing them as Git submodules
-- deploy all required infrastructure to GCP
-- expose the public Eureka dashboard URL in `README.md`
-- record the GCP console walkthrough and `pm2 monit` on the VMs
-
