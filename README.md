@@ -9,6 +9,7 @@ AgriSense Cloud is a smart farm monitoring platform built with Spring Boot micro
 - Dashboard: [http://34.124.221.108:4173](http://34.124.221.108:4173)
 - Eureka Dashboard: [http://34.124.221.108:8761](http://34.124.221.108:8761)
 - Main API Gateway: [http://34.124.221.108:8080](http://34.124.221.108:8080)
+- Public domain API: [http://agrisense-demo.duckdns.org/api/devices](http://agrisense-demo.duckdns.org/api/devices)
 - Load Balancer API: [http://34.1.140.55/api/devices](http://34.1.140.55/api/devices)
 - Sensor ingest endpoint: [http://34.1.140.55/api/sensor-data](http://34.1.140.55/api/sensor-data)
 - Sensor query example: [http://34.1.140.55/api/sensor-data/sensor-01](http://34.1.140.55/api/sensor-data/sensor-01)
@@ -99,7 +100,7 @@ Stored in:
 Target API:
 
 ```text
-http://34.1.140.55/api/sensor-data
+http://agrisense-demo.duckdns.org/api/sensor-data
 ```
 
 ### Arduino sensor node sketch
@@ -113,19 +114,19 @@ Stored in:
 ### Device list
 
 ```bash
-curl http://34.1.140.55/api/devices
+curl http://agrisense-demo.duckdns.org/api/devices
 ```
 
 ### Latest sensor data
 
 ```bash
-curl http://34.1.140.55/api/sensor-data/sensor-01
+curl http://agrisense-demo.duckdns.org/api/sensor-data/sensor-01
 ```
 
 ### Post sensor reading
 
 ```bash
-curl -X POST http://34.1.140.55/api/sensor-data \
+curl -X POST http://agrisense-demo.duckdns.org/api/sensor-data \
   -H "Content-Type: application/json" \
   -d '{"deviceId":"sensor-01","temperature":29.5,"humidity":68.2,"soilMoisture":41.7}'
 ```
